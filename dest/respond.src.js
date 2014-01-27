@@ -1,5 +1,5 @@
 /*! Respond.js v1.4.2: min/max-width media query polyfill
- * Copyright 2013 Scott Jehl
+ * Copyright 2014 Scott Jehl
  * Licensed under MIT
  * http://j.mp/respondjs */
 
@@ -65,7 +65,7 @@
   respond.unsupportedmq = isUnsupportedMediaQuery;
   respond.regex = {
     media: /@media[^\{]+\{([^\{\}]*\{[^\}\{]*\})+/gi,
-    keyframes: /@(?:\-(?:o|moz|webkit)\-)?keyframes[^\{]+\{(?:[^\{\}]*\{[^\}\{]*\})+[^\}]*\}/gi,
+    keyframes: /@(?:\-(?:o|moz|webkit)\-)?(keyframes|page)[^\{]+\{(?:[^\{\}]*\{[^\}\{]*\})+[^\}]*\}/gi,
     comments: /\/\*[^*]*\*+([^/][^*]*\*+)*\//gi,
     urls: /(url\()['"]?([^\/\)'"][^:\)'"]+)['"]?(\))/g,
     findStyles: /@media *([^\{]+)\{([\S\s]+?)$/,

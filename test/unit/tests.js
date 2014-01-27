@@ -253,6 +253,19 @@ window.onload = function(){
 					});
 			});
 		});
+
+		asyncTest( 'Issue #256: bootstrap minified css', function() { 
+			queueRequest( function() {
+				respond.ajax( getNormalizedUrl( 'bootstrap-tests/bootstrap.min.css' ),
+					function( data ) {
+						var stripped = data.replace( respond.regex.comments, '' )
+														.replace( respond.regex.keyframes, '' );
+console.log( stripped.match( respond.regex.media ) );
+						ok( stripped.match( respond.regex.media ), 'Stripping comments and keyframes don\'t bust the media regex.' );
+						start();
+					});
+			});
+		});
 	}
 	
 };
